@@ -1,0 +1,36 @@
+Frontend Developer Sr. (React/Next)
+
+About the job
+Responsibilities
+
+Estimate, design, develop and deliver features assigned to the front-end team. 
+Able to work with the squad to achieve goals and meet expectations.
+Collaborate with UX/UI designers and backend developers to implement responsive and visually appealing user interfaces.
+Stay up to date with the latest trends and best practices in frontend development, and ensure the team follows industry standards.
+Conduct code reviews to maintain code quality and ensure adherence to coding standards.
+Collaborate with the product management team to understand project requirements and deliver high-quality solutions on time.
+Troubleshoot and debug issues, ensuring optimal performance and user
+
+Qualifications
+
+Strong experience working as a ReactJS developer.
+Excellent knowledge of JavaScript, CSS, HTML, and front-end languages.
+Strong knowledge of REACT tools including Next.js,React.js, Webpack, Enzyme, Redux, and Flux. Deep understanding of async/await and Promise.
+Deep understanding of SSR.
+Deep understanding of state architectures (flux, pubsub, etc).
+Good analytical and problem-solving skills.
+Quality-oriented mindset, attention to details.
+Good team playing mindset.
+
+Salary & Benefit Details
+
+Free lunch and soft drink/coffee-non coffee
+Birthday party 1 time/month
+Annual leave 6 days
+Annual personal business leaves 3 days
+Health Insurance (OPD/ID) coverage -Apply after pass probation.
+Social Security Fund
+Company Trip and Outing
+Performance bonus 2 time/year (Depend on company profit and employee performance)
+Annual salary adjustment/year working
+

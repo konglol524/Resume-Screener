@@ -1,0 +1,63 @@
+Emma Rodriguez
+123 Tech Lane, San Francisco, CA 94110
+(415) 555-7890 | emma.rodriguez@email.com | GitHub: emmarodriguez
+
+PROFESSIONAL SUMMARY
+Innovative and detail-oriented Frontend Developer with 6 years of experience creating responsive, user-friendly web applications. Proven track record of translating complex design requirements into elegant, high-performance web solutions using modern JavaScript frameworks.
+
+TECHNICAL SKILLS
+Languages: JavaScript (ES6+), TypeScript, HTML5, CSS3, SASS
+Frameworks/Libraries: React.js, Vue.js, Next.js, Angular
+State Management: Redux, MobX, Vuex
+Testing: Jest, React Testing Library, Cypress
+Build Tools: Webpack, Babel, npm, Yarn
+Design Tools: Figma, Adobe XD
+Version Control: Git, GitHub, GitLab
+Responsive Design: Bootstrap, Tailwind CSS
+Performance Optimization: Lighthouse, Chrome DevTools
+
+PROFESSIONAL EXPERIENCE
+
+Senior Frontend Developer | TechInnovate Solutions, San Francisco, CA
+March 2021 - Present
+- Led complete redesign of flagship SaaS product, improving user interface and reducing page load time by 40%
+- Implemented micro-frontend architecture using React and Next.js
+- Developed component libraries using Storybook
+- Mentored junior developers and conducted code reviews
+- Integrated advanced accessibility features
+
+Frontend Developer | DataViz Technologies, Oakland, CA
+June 2019 - February 2021
+- Developed interactive data visualization dashboards using React and D3.js
+- Created responsive web applications with Redux and TypeScript
+- Implemented automated testing infrastructure
+- Optimized application performance, reducing bundle size by 25%
+- Collaborated with UX/UI designers to create pixel-perfect interfaces
+
+Junior Frontend Developer | WebCraft Interactive, San Jose, CA
+August 2017 - May 2019
+- Built responsive websites and web applications using vanilla JavaScript and jQuery
+- Developed cross-browser compatible interfaces
+- Implemented RESTful API integrations
+- Participated in agile development processes
+- Contributed to open-source projects
+
+EDUCATION
+Bachelor of Science in Computer Science
+University of California, Berkeley | Graduated: May 2017
+- Minor in User Experience Design
+- GPA: 3.7/4.0
+
+CERTIFICATIONS
+- AWS Certified Developer - Associate
+- React Certification, Udacity
+- Frontend Web Development Professional Certificate, Google
+
+PROFESSIONAL ACHIEVEMENTS
+- Speaker at SF Frontend Developer Conference 2022
+- Contributor to open-source React component library
+- Published technical articles on frontend development
+
+LANGUAGES
+- English (Native)
+- Spanish (Conversational)

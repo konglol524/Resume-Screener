@@ -1,0 +1,73 @@
+Jane Smith
+1234 Maple Avenue, Suite 101
+Bangkok, Thailand 10110
+Phone: +66 2 234 5678
+Email: jane.smith@email.com
+LinkedIn: linkedin.com/in/janesmith
+
+Professional Summary
+
+Detail-oriented Software Tester with over 7 years of experience in manual and automated testing for web and mobile applications. Proven track record of developing and executing comprehensive test plans, identifying and reporting defects, and collaborating with cross-functional teams to ensure high-quality software delivery. Proficient in Agile methodologies, test automation frameworks, and continuous integration/continuous delivery (CI/CD) processes.
+
+Education
+
+Master of Science in Software Engineering
+Chulalongkorn University, Bangkok, Thailand
+Graduated: May 2015
+
+Bachelor of Science in Computer Science
+King Mongkut's University of Technology Thonburi, Bangkok, Thailand
+Graduated: May 2012
+
+Professional Experience
+
+Senior Software Tester
+Tech Solutions Co., Ltd., Bangkok, Thailand
+June 2018 – Present
+
+Implemented AI-driven testing procedures, increasing code coverage by 45% and reducing bug detection time by 30%.
+Led the adoption of Continuous Integration/Continuous Deployment (CI/CD) practices, resulting in a 20% improvement in deployment frequency.
+Overhauled manual testing frameworks, reducing regression testing time by 50% and saving over 100 hours monthly.
+Designed and executed comprehensive test plans for major software rollouts, achieving a 99% success rate on initial product launches.
+Mentored a team of 5 junior testers, enhancing team productivity by 25% and fostering a culture of technical excellence.
+Software Tester
+Innovatech Ltd., Bangkok, Thailand
+July 2015 – May 2018
+
+Integrated Behavior Driven Development (BDD) into testing processes, enhancing test accuracy and stakeholder communication.
+Led projects to reduce technical debt, decreasing error rates by 40% through rigorous test automation.
+Collaborated with developers to establish a Selenium-based automation framework, reducing testing cycle time by 35%.
+Junior Software Tester
+SoftWorks Inc., Bangkok, Thailand
+June 2012 – June 2015
+
+Executed over 500 test cases for enterprise-level software, enhancing software reliability by 25%.
+Developed Python test scripts, shortening the testing phase by three weeks for critical software updates.
+Contributed to the creation of a bug-tracking system, accelerating issue resolution times by 15%.
+Technical Skills
+
+Testing Methodologies: Manual Testing, Automated Testing, Regression Testing, Performance Testing, Security Testing
+Automation Tools: Selenium WebDriver, QTP/UFT, TestComplete, JMeter
+Programming & Scripting: Java, Python, SQL
+Tools & Technologies: Git, Jenkins, Docker, JIRA, Agile/Scrum Methodologies, DevOps Practices
+Certifications
+
+ISTQB Certified Tester – Advanced Level (CTAL), November 2016
+Certified Agile Tester (CAT), March 2017
+AWS Certified Solutions Architect – Associate, December 2018
+Projects
+
+Automated Regression Testing Framework
+
+Developed an automated regression testing framework using Selenium and TestNG, reducing manual testing efforts by 60% and ensuring consistent test coverage across multiple application versions.
+Performance Testing for E-Commerce Platform
+
+Conducted performance testing using JMeter for a high-traffic e-commerce platform, identifying bottlenecks that, once resolved, improved page load times by 35% and enhanced user experience.
+Professional Affiliations
+
+Member, International Software Testing Qualifications Board (ISTQB)
+Member, Association for Software Testing (AST)
+Languages
+
+English: Fluent
+Thai: Native

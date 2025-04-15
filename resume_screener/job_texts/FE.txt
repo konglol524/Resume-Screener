@@ -1,0 +1,8 @@
+Frontend-Developer
+- Design and develop user interfaces for web applications and digital platforms.
+- Implement responsive and visually appealing frontend components and layouts, ensuring compatibility across different browsers, devices, and screen sizes.
+- Optimize frontend performance and scalability, including code refactoring, caching strategies, and asset optimization techniques.
+- Collaborate with UX designers to translate design mockups and wireframes into intuitive and user-friendly frontend interfaces.
+- Conduct usability testing and gather user feedback to identify areas for improvement and enhance the overall user experience.
+- Work closely with backend developers, designers, and product managers to implement frontend features and functionality in alignment with project requirements and timelines.
+- Communicate effectively with team members and stakeholders, providing regular updates on project progress, challenges, and opportunities.

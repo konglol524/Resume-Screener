@@ -1,0 +1,67 @@
+Johnathan Doe
+1234 Elm Street, Suite 567
+Bangkok, Thailand 10110
+Phone: +66 2 123 4567
+Email: johnathan.doe@email.com
+LinkedIn: linkedin.com/in/johnathandoe
+Professional Summary
+Results-driven Data Engineer with over 8 years of experience in designing, implementing, and optimizing data infrastructures. Proficient in building robust data pipelines, ensuring data quality, and enabling data-driven decision-making processes. Adept at collaborating with cross-functional teams to translate business requirements into technical solutions.
+Education
+Master of Science in Computer Science
+Chulalongkorn University, Bangkok, Thailand
+Graduated: May 2015
+Thesis: "Optimizing Data Pipeline Performance in Distributed Systems"
+Bachelor of Engineering in Information Technology
+King Mongkut's Institute of Technology Ladkrabang, Bangkok, Thailand
+Graduated: May 2012
+Graduated with First-Class Honors
+Professional Experience
+Senior Data Engineer
+DataSolutions Co., Ltd., Bangkok, Thailand
+June 2018 – Present
+Led the design and implementation of scalable data architectures, resulting in a 30% improvement in data processing efficiency.
+Developed and maintained ETL processes using Apache Spark and Python, reducing data latency by 25%.
+Collaborated with data scientists to deploy machine learning models into production, enhancing predictive analytics capabilities.
+Ensured data quality and integrity through the development of automated validation frameworks.
+Mentored junior data engineers, fostering a culture of continuous learning and professional development.
+Data Engineer
+Tech Innovators Ltd., Bangkok, Thailand
+July 2015 – May 2018
+Designed and implemented data pipelines to process large-scale datasets, supporting business intelligence initiatives.
+Optimized SQL queries and database performance, leading to a 40% reduction in query response times.
+Integrated data from various sources, including APIs and third-party platforms, ensuring seamless data flow.
+Collaborated with stakeholders to gather requirements and deliver data solutions aligned with business objectives.
+Junior Data Analyst
+Insight Analytics Co., Ltd., Bangkok, Thailand
+June 2012 – June 2013
+Assisted in data collection and preprocessing for analytical projects.
+Developed dashboards and reports using Tableau to visualize key performance indicators.
+Conducted data quality assessments, identifying and rectifying inconsistencies.
+Technical Skills
+Programming Languages: Python, SQL, Java
+Data Processing Frameworks: Apache Spark, Hadoop
+Database Systems: MySQL, PostgreSQL, MongoDB
+Data Warehousing: Amazon Redshift, Google BigQuery
+ETL Tools: Apache NiFi, Airflow
+Data Visualization: Tableau, Power BI
+Cloud Platforms: AWS, GCP
+Version Control: Git
+Certifications
+AWS Certified Data Analytics – Specialty
+Google Professional Data Engineer
+Certified Apache Spark Developer
+Projects
+Real-Time Analytics Platform
+Developed a real-time analytics platform using Apache Kafka and Spark Streaming, enabling instant insights from streaming data.
+Implemented data partitioning and replication strategies to ensure high availability and fault tolerance.
+Data Lake Implementation
+Led the migration of traditional data warehouses to a scalable data lake architecture on AWS S3, reducing storage costs by 50%.
+Established data governance policies and metadata management to maintain data quality and compliance.
+Professional Affiliations
+Member, Association for Computing Machinery (ACM)
+Member, Thailand Data Management Association (TDMA)
+Languages
+English: Fluent
+Thai: Native
+References
+Available upon request.

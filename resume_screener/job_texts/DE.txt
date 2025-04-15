@@ -1,0 +1,26 @@
+Data Engineer
+Responsibility
+· Developing systems that collect, manage, and convert raw data into usable information for data scientists and business analysts to interpret
+· Making data accessible so that organizations can use it to evaluate and optimize their performance
+· Transforming source data and target data by ETL tool as well as transform target data to source data.
+· Using programming language and tools, identify ways to improve data reliability, efficiency and quality
+· Ensuring data management and governance to maintain the data integrity. 
+Service Scope (Cloud and ETL Tools)
+ 
+·      Informatica
+·      DataStage
+·      Oracle DI
+·      SSIS
+·      Microsoft Azure
+·      AWS
+·      Google Cloud Platform
+·      Other
+ 
+Requirements
+·      Understanding analyzing complex database query
+·      Experience in processing ETL design and development standards and techniques
+·      Good knowledge of ETL tools (Extract, Transform and Load)
+·      Good knowledge of Hadoop (HDFS, YARN, HBase, Sqoop)
+·      Good knowledge of Azure, AWS, GCP cloud data platform
+·      Very good analytical, problem-solving and interpersonal skills
+·      Good English communications and writing skills are a plus

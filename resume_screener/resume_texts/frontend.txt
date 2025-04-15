@@ -1,0 +1,70 @@
+Michael Johnson
+1234 Pine Street, Suite 789
+Bangkok, Thailand 10110
+Phone: +66 2 345 6789
+Email: michael.johnson@email.com
+LinkedIn: linkedin.com/in/michaeljohnson
+GitHub: github.com/michaeljohnson
+
+Professional Summary
+
+Creative and detail-oriented Front-End Developer with over 6 years of experience in designing and implementing responsive and user-centric web applications. Proficient in HTML, CSS, JavaScript, and modern frameworks like React and Angular. Adept at collaborating with cross-functional teams to deliver seamless user experiences and drive business growth.
+
+Education
+
+Bachelor of Science in Computer Science
+Chulalongkorn University, Bangkok, Thailand
+Graduated: May 2015
+
+Professional Experience
+
+Senior Front-End Developer
+Innovative Web Solutions Co., Ltd., Bangkok, Thailand
+June 2019 – Present
+
+Led the development of a progressive web application (PWA) that increased user engagement by 40% and boosted conversion rates by 25%.​
+Collaborated with UX/UI designers to revamp the company's main e-commerce platform, resulting in a 30% reduction in bounce rates.​
+Implemented lazy loading and code-splitting techniques, improving page load times by 35%.​
+Mentored junior developers, fostering a culture of continuous learning and code quality.​
+Front-End Developer
+Creative Tech Ltd., Bangkok, Thailand
+July 2015 – May 2019
+
+Developed and maintained responsive websites for various clients, ensuring cross-browser compatibility and adherence to web standards.​
+Integrated RESTful APIs to fetch dynamic content, enhancing user interactivity and engagement.​
+Optimized existing web applications for performance, achieving a 20% improvement in load times.​
+Collaborated with back-end developers to implement seamless data synchronization between client and server.​
+Technical Skills
+
+Languages: HTML5, CSS3, JavaScript (ES6+), TypeScript​
+Frameworks/Libraries: React, Angular, Vue.js, jQuery​
+Tools & Platforms: Webpack, Babel, Git, npm, Docker​
+Design Tools: Adobe XD, Figma, Sketch​
+Testing: Jest, Mocha, Cypress​
+Methodologies: Agile, Scrum​
+Certifications
+
+Certified JavaScript Developer, International JavaScript Institute, 2017​
+React Professional Certification, React Training, 2018​
+Projects
+
+E-Commerce Platform Redesign
+
+Led the front-end development of a major e-commerce platform redesign using React and Redux, resulting in a 30% increase in user retention and a 20% boost in sales.​
+Real-Time Chat Application
+
+Developed a real-time chat application using Angular and Socket.io, facilitating instant communication for over 10,000 active users.​
+Portfolio Website
+
+Designed and built a personal portfolio website showcasing various projects and skills, leading to a 50% increase in freelance inquiries.​
+Professional Affiliations
+
+Member, Thailand Web Developers Association​
+Member, JavaScript Bangkok Community​
+Languages
+
+English: Fluent​
+Thai: Native​
+References
+
+Available upon request.

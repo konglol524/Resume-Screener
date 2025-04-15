@@ -1,0 +1,11 @@
+Software Tester Responsibilities:
+Reviewing software requirements and preparing test scenarios.
+Executing tests on software usability.
+Analyzing test results on database impacts, errors or bugs, and usability.
+Preparing reports on all aspects related to the software testing carried out and reporting to the design team.
+Interacting with clients to understand product requirements.
+Participating in design reviews and providing input on requirements, product design, and potential problems.
+Software Tester Requirements:
+Studying in computer science or related field.
+Up-to-date knowledge of software test design and testing methodologies.
+Working knowledge of test techniques and compatibility with various software programs.
