@@ -1,8 +1,19 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from proto_matcher import BiasedDocumentMatcher
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+# Allow requests from your frontend (e.g., localhost:3000)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # or ["*"] for all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # or ["POST", "GET", "DELETE", "OPTIONS"]
+    allow_headers=["*"],
+)
+
 matcher = BiasedDocumentMatcher()
 
 class JobRequest(BaseModel):
