@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useEffect, useState, useCallback } from "react"
+import { useEffect, useState, useCallback, useRef } from "react"
 import axios from "axios"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -16,7 +16,6 @@ import {
   FileTextIcon,
   AlertCircleIcon,
   CheckCircleIcon,
-  XIcon,
   ClockIcon,
   BarChart3Icon,
 } from "lucide-react"
@@ -43,6 +42,14 @@ interface ResumeUploaderProps {
 }
 
 export default function ResumeUploader({ jobUploaded, onRankStart, onRankComplete }: ResumeUploaderProps) {
+  const fileInputRef = useRef<HTMLInputElement>(null)
+
+  const handleFileDialog = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click()
+    }
+  }
+
   useEffect(() => {
     // Only import PDF.js in the browser
     const loadPdfJs = async () => {
@@ -241,29 +248,29 @@ export default function ResumeUploader({ jobUploaded, onRankStart, onRankComplet
     }
   }
 
-  // Delete a single resume
-  const handleDeleteResume = async (id: string) => {
-    const fileToDelete = resumeFiles.find((file) => file.id === id)
-    if (!fileToDelete) return
+  // // Delete a single resume
+  // const handleDeleteResume = async (id: string) => {
+  //   const fileToDelete = resumeFiles.find((file) => file.id === id)
+  //   if (!fileToDelete) return
 
-    if (fileToDelete.status === "success") {
-      try {
-        // If the file was successfully uploaded, delete it from the server
-        await axios.delete(`${API_URL}/resume/${encodeURIComponent(fileToDelete.file.name)}`)
-      } catch (error) {
-        console.error("Failed to delete resume from server:", error)
-      }
-    }
+  //   if (fileToDelete.status === "success") {
+  //     try {
+  //       // If the file was successfully uploaded, delete it from the server
+  //       await axios.delete(`${API_URL}/resume/${encodeURIComponent(fileToDelete.file.name)}`)
+  //     } catch (error) {
+  //       console.error("Failed to delete resume from server:", error)
+  //     }
+  //   }
 
-    // Remove from local state
-    setResumeFiles((prev) => prev.filter((file) => file.id !== id))
-  }
+  //   // Remove from local state
+  //   setResumeFiles((prev) => prev.filter((file) => file.id !== id))
+  // }
 
   // Delete all resumes
   const handleDeleteAllResumes = async () => {
     try {
       // Delete all uploaded resumes from the server
-      await axios.delete(`${API_URL}/resume`)
+      await axios.delete(`${API_URL}/resumes`)
 
       // Clear local state
       setResumeFiles([])
@@ -303,9 +310,15 @@ export default function ResumeUploader({ jobUploaded, onRankStart, onRankComplet
     if (files && files.length > 0) {
       const newFiles: ResumeFile[] = []
 
-      // Process each dropped file
       for (let i = 0; i < files.length; i++) {
         const file = files[i]
+
+        // Check if a file with the same name already exists
+        if (resumeFiles.some((existingFile) => existingFile.file.name === file.name)) {
+          setGlobalStatus({ type: "error", message: `File "${file.name}" has already been uploaded.` })
+          continue
+        }
+
         if (file.type === "application/pdf") {
           newFiles.push({
             file,
@@ -319,11 +332,11 @@ export default function ResumeUploader({ jobUploaded, onRankStart, onRankComplet
       if (newFiles.length > 0) {
         setResumeFiles((prev) => [...prev, ...newFiles])
         setGlobalStatus({ type: null, message: "" })
-      } else {
+      } else if (newFiles.length === 0 && files.length > 0) {
         setGlobalStatus({ type: "error", message: "Please upload PDF files only." })
       }
     }
-  }, [])
+  }, [resumeFiles])
 
   // Handle file input change
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -331,9 +344,15 @@ export default function ResumeUploader({ jobUploaded, onRankStart, onRankComplet
     if (files && files.length > 0) {
       const newFiles: ResumeFile[] = []
 
-      // Process each selected file
       for (let i = 0; i < files.length; i++) {
         const file = files[i]
+
+        // Check if a file with the same name already exists
+        if (resumeFiles.some((existingFile) => existingFile.file.name === file.name)) {
+          setGlobalStatus({ type: "error", message: `File "${file.name}" has already been uploaded.` })
+          continue
+        }
+
         if (file.type === "application/pdf") {
           newFiles.push({
             file,
@@ -347,7 +366,7 @@ export default function ResumeUploader({ jobUploaded, onRankStart, onRankComplet
       if (newFiles.length > 0) {
         setResumeFiles((prev) => [...prev, ...newFiles])
         setGlobalStatus({ type: null, message: "" })
-      } else {
+      } else if (newFiles.length === 0 && files.length > 0) {
         setGlobalStatus({ type: "error", message: "Please upload PDF files only." })
       }
     }
@@ -393,20 +412,23 @@ export default function ResumeUploader({ jobUploaded, onRankStart, onRankComplet
                 <p className="text-lg font-medium">Drag and drop your resumes here</p>
                 <p className="text-sm text-muted-foreground mt-1">or click to browse files</p>
               </div>
-              <label className="cursor-pointer inline-block">
-                <Button variant="outline" type="button" className="w-full flex items-center gap-2">
-                  <UploadIcon className="h-4 w-4" />
-                  Select Resume PDFs
-                </Button>
-                <input
-                  type="file"
-                  accept="application/pdf"
-                  onChange={handleFileChange}
-                  className="hidden"
-                  id="resume-file-input"
-                  multiple
-                />
-              </label>
+              <Button
+                variant="outline"
+                type="button"
+                className=" flex items-center gap-2"
+                onClick={handleFileDialog}
+              >
+                <UploadIcon className="h-4 w-4" />
+                Select Resume PDFs
+              </Button>
+              <input
+                type="file"
+                accept="application/pdf"
+                onChange={handleFileChange}
+                className="hidden"
+                ref={fileInputRef}
+                multiple
+              />
             </div>
           </div>
 
@@ -527,7 +549,7 @@ export default function ResumeUploader({ jobUploaded, onRankStart, onRankComplet
                       )}
 
                       {/* Delete button */}
-                      <Button
+                      {/* <Button
                         variant="ghost"
                         size="icon"
                         className="h-8 w-8 text-muted-foreground hover:text-red-600"
@@ -535,7 +557,7 @@ export default function ResumeUploader({ jobUploaded, onRankStart, onRankComplet
                         disabled={resumeFile.status === "uploading"}
                       >
                         <XIcon className="h-4 w-4" />
-                      </Button>
+                      </Button> */}
                     </div>
                   </div>
                 ))}

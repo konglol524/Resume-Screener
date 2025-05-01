@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useEffect, useState, useCallback } from "react"
+import { useEffect, useState, useCallback, useRef } from "react"
 import axios from "axios"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -42,6 +42,14 @@ export default function JobUploader({ onUploadSuccess }: JobUploaderProps) {
     type: null,
     message: "",
   })
+
+  const fileInputRef = useRef<HTMLInputElement>(null)
+
+  const handleFileDialog = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click()
+    }
+  }
 
   // Text extraction utility
   const extractText = async (file: File) => {
@@ -201,19 +209,22 @@ export default function JobUploader({ onUploadSuccess }: JobUploaderProps) {
                   <p className="text-lg font-medium">Drag and drop your PDF file here</p>
                   <p className="text-sm text-muted-foreground mt-1">or click to browse files</p>
                 </div>
-                <label className="cursor-pointer inline-block">
-                  <Button variant="outline" type="button" className="w-full flex items-center gap-2">
-                    <UploadIcon className="h-4 w-4" />
-                    Select PDF File
-                  </Button>
-                  <input
-                    type="file"
-                    accept="application/pdf"
-                    onChange={handleFileChange}
-                    className="hidden"
-                    id="pdf-file-input"
-                  />
-                </label>
+                <Button
+                  variant="outline"
+                  type="button"
+                  className=" flex items-center gap-2"
+                  onClick={handleFileDialog}
+                >
+                  <UploadIcon className="h-4 w-4" />
+                  Select PDF File
+                </Button>
+                <input
+                  type="file"
+                  accept="application/pdf"
+                  onChange={handleFileChange}
+                  className="hidden"
+                  ref={fileInputRef}
+                />
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center space-y-4">
@@ -224,7 +235,7 @@ export default function JobUploader({ onUploadSuccess }: JobUploaderProps) {
                   <p className="text-lg font-medium text-green-700">{jobFile.name}</p>
                   <p className="text-sm text-muted-foreground mt-1">{(jobFile.size / 1024 / 1024).toFixed(2)} MB</p>
                 </div>
-                <Button
+                {/* <Button
                   variant="outline"
                   size="sm"
                   className="text-red-500 border-red-200 hover:bg-red-50 hover:text-red-600"
@@ -235,7 +246,7 @@ export default function JobUploader({ onUploadSuccess }: JobUploaderProps) {
                 >
                   <TrashIcon className="h-4 w-4 mr-2" />
                   Remove File
-                </Button>
+                </Button> */}
               </div>
             )}
           </div>

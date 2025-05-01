@@ -1,21 +1,24 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { FileIcon, DownloadIcon, EyeIcon, BarChart3Icon, TrophyIcon } from "lucide-react"
+import { FileIcon, DownloadIcon, EyeIcon, BarChart3Icon, TrophyIcon, HeartIcon } from "lucide-react"
 import { Skeleton } from "@/components/ui/skeleton"
 
-// Update the RankingResult interface to match the corrected data structure
+// Import PDF.js
+let pdfjsLib: any = null
+let GlobalWorkerOptions: any = null
+
+// Update the RankingResult interface to include the file
 interface RankingResult {
   name: string
   score: number
   file?: File
-  // Remove the matches property since it's not provided by the API
 }
 
 interface RankingResultsProps {
@@ -25,12 +28,25 @@ interface RankingResultsProps {
 
 export default function RankingResults({ results, isLoading }: RankingResultsProps) {
   const [selectedResume, setSelectedResume] = useState<RankingResult | null>(null)
+  const [pdfPreviewUrl, setPdfPreviewUrl] = useState<string | null>(null)
+
+  useEffect(() => {
+    // Only import PDF.js in the browser
+    const loadPdfJs = async () => {
+      if (typeof window !== "undefined") {
+        const pdfjs = await import("pdfjs-dist")
+        pdfjsLib = pdfjs
+        GlobalWorkerOptions = pdfjs.GlobalWorkerOptions
+        GlobalWorkerOptions.workerSrc = "pdf.worker.min.mjs"
+      }
+    }
+
+    loadPdfJs()
+  }, [])
 
   // Update the getScoreColor function to handle percentage scores correctly
   const getScoreColor = (score: number) => {
-    if (score >= 80) return "text-green-600 bg-green-50 border-green-200"
-    if (score >= 60) return "text-blue-600 bg-blue-50 border-blue-200"
-    if (score >= 40) return "text-amber-600 bg-amber-50 border-amber-200"
+    if (score >= 52) return "text-green-600 bg-green-50 border-green-200"
     return "text-red-600 bg-red-50 border-red-200"
   }
 
@@ -41,6 +57,23 @@ export default function RankingResults({ results, isLoading }: RankingResultsPro
     if (index === 2) return <TrophyIcon className="h-5 w-5 text-amber-700" />
     return null
   }
+
+  // Generate a PDF preview URL when a resume is selected
+  useEffect(() => {
+    if (selectedResume?.file) {
+      const fileUrl = URL.createObjectURL(selectedResume.file)
+      setPdfPreviewUrl(fileUrl)
+    } else {
+      setPdfPreviewUrl(null)
+    }
+
+    // Cleanup the object URL when the component unmounts or the file changes
+    return () => {
+      if (pdfPreviewUrl) {
+        URL.revokeObjectURL(pdfPreviewUrl)
+      }
+    }
+  }, [selectedResume])
 
   return (
     <div className="container max-w-2xl mx-auto p-4">
@@ -77,6 +110,7 @@ export default function RankingResults({ results, isLoading }: RankingResultsPro
                     flex items-center justify-between p-4 rounded-md border 
                     ${selectedResume?.name === result.name ? "border-primary bg-primary/5" : "bg-card"}
                     hover:bg-muted/50 cursor-pointer transition-colors
+                    ${result.score >= 0.01 ? getScoreColor(result.score) : "text-muted-foreground"}
                   `}
                   onClick={() => setSelectedResume(result)}
                 >
@@ -91,15 +125,6 @@ export default function RankingResults({ results, isLoading }: RankingResultsPro
                         <Progress
                           value={result.score}
                           className="h-1.5 w-24"
-                          indicatorClassName={
-                            result.score >= 80
-                              ? "bg-green-600"
-                              : result.score >= 60
-                                ? "bg-blue-600"
-                                : result.score >= 40
-                                  ? "bg-amber-600"
-                                  : "bg-red-600"
-                          }
                         />
                         <Badge variant="outline" className={`${getScoreColor(result.score)} text-xs`}>
                           {result.score}%
@@ -108,18 +133,33 @@ export default function RankingResults({ results, isLoading }: RankingResultsPro
                     </div>
                   </div>
 
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="text-muted-foreground"
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      setSelectedResume(result)
-                    }}
-                  >
-                    <EyeIcon className="h-4 w-4 mr-1" />
-                    Details
-                  </Button>
+                  <div className="flex items-center gap-2">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="text-muted-foreground flex items-center gap-2"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setSelectedResume(result)
+                      }}
+                    >
+                      <EyeIcon className="h-4 w-4" />
+                      Details
+                    </Button>
+
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="text-muted-foreground flex items-center gap-2"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        // Placeholder for like functionality
+                      }}
+                    >
+                      <HeartIcon className="h-4 w-4" />
+                      Like
+                    </Button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -143,7 +183,7 @@ export default function RankingResults({ results, isLoading }: RankingResultsPro
                   <TabsTrigger value="details">Match Details</TabsTrigger>
                 </TabsList>
 
-                {/* Replace the TabsContent for "overview" with this simplified version */}
+                {/* Overview Tab */}
                 <TabsContent value="overview" className="mt-4 space-y-4">
                   <div className="space-y-2">
                     <h4 className="text-sm font-medium">Match Score</h4>
@@ -173,12 +213,19 @@ export default function RankingResults({ results, isLoading }: RankingResultsPro
                   </div>
                 </TabsContent>
 
-                {/* Replace the TabsContent for "details" with this simplified version */}
+                {/* Details Tab with PDF Preview */}
                 <TabsContent value="details" className="mt-4">
-                  <div className="p-4 text-sm text-center text-muted-foreground">
-                    <p>Detailed match information is not available.</p>
-                    <p className="mt-2">The resume has an overall match score of {selectedResume.score}%.</p>
+                  <div className="p-2 text-sm text-center text-muted-foreground">
                   </div>
+                  {pdfPreviewUrl && (
+                    <div className="mt-1">
+                      <iframe
+                        src={pdfPreviewUrl}
+                        className="w-full h-200 border rounded-md"
+                        title="PDF Preview"
+                      />
+                    </div>
+                  )}
                 </TabsContent>
               </Tabs>
             </div>
@@ -190,20 +237,19 @@ export default function RankingResults({ results, isLoading }: RankingResultsPro
             Back to List
           </Button>
 
-          {selectedResume && (
+          {/* {selectedResume && (
             <Button
               variant="secondary"
               className="bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100"
               onClick={() => {
                 // Download functionality would go here
-                // This is a placeholder since we can't actually download the file in this demo
                 alert("Download functionality would be implemented here")
               }}
             >
               <DownloadIcon className="h-4 w-4 mr-2" />
               Download Resume
             </Button>
-          )}
+          )} */}
         </CardFooter>
       </Card>
     </div>
